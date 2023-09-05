@@ -16,20 +16,18 @@ public class Exercicio02 {
 		Scanner sc = new Scanner(System.in);
 		
 		List<Integer> array = new ArrayList<Integer>();
-	
-		
-		array.add(1);
 		array.add(2);
+		array.add(5);
+		array.add(1);
 		array.add(3);
 		array.add(4);
-		array.add(5);
-		array.add(6);
+		array.add(9);
 		array.add(7);
 		array.add(8);
-		array.add(9);
 		array.add(10);
+		array.add(6);
 		
-		System.out.print("Digite um numero :");
+		System.out.print("Digite um numero: ");
 		int num = sc.nextInt();
 		
 		int posicao = array.indexOf(num);
@@ -38,14 +36,6 @@ public class Exercicio02 {
         } else {
             System.out.println("O número " + num + " não foi encontrado!");
         }
-		
-		
-		
-		
-		
-		
-		
-
 
 	}
 

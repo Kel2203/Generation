@@ -13,10 +13,7 @@ public class Exercicios01 {
 //		deverá adicioná-las individualmente no ArrayList. Em seguida, faça o que se pede:
 //		Mostre na tela todas as cores que foram adicionadas. 
 //		Mostre na tela todas as cores que foram adicionadas ordenadas em ordem crescente.
-
-
-		
-		
+	
 		 Scanner sc = new Scanner(System.in);
 	        ArrayList<String> cores = new ArrayList<>();
 
