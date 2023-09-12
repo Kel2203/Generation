@@ -31,6 +31,8 @@ public class Cliente {
 	}
 	
 	 public void visualizar() {
+		 
+		 System.out.println("\n=======================================================\n");
 	        System.out.println("Nome: " + nome);
 	        System.out.println("Idade: " + idade);
 	        System.out.println("ID: " + id);

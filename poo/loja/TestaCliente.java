@@ -5,14 +5,24 @@ public class TestaCliente {
 	public static void main(String[] args) {
 		
 		
-		 // Instancia dois objetos da Classe Cliente
-        Cliente cliente1 = new Cliente("raquel", 123, 34, 59315513, "teste@gmail.com");
-        
-        Cliente cliente2 = new Cliente("ana", 456, 23, 59315518, "teste02@gmail.com");
+		
+        PessoaFisica cliente1 = new PessoaFisica(
+        		"Mario dos Santos", 
+        		123, 34, 59315513, 
+        		"mario@gmail.com", 
+        		"12345678910"
+        		);
+        PessoaJuridica cliente2 = new PessoaJuridica(
+        		"Ana Barbosa",
+        		"12312312312", 
+        		456, 
+        		23, 
+        		59315518, 
+        		"ana_barb@gmail.com"
+        		);
 
-        // Exibe as informações dos objetos instanciados
+    
         cliente1.visualizar();
-        System.out.println();
         cliente2.visualizar();
 	}
 
