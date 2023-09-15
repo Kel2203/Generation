@@ -1,15 +1,19 @@
 package poo.loja;
 
 import java.util.InputMismatchException;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class PessoaJuridica extends Cliente implements Tipo {
 
 
-	private String nome, email, cnpj;
+
 	private int id, idade, telefone;
-	
+	private Optional<String> nome = Optional.empty();
+    private Optional<String> email = Optional.empty();
+    private Optional<String> cnpj = Optional.empty();
 	Scanner sc = new Scanner(System.in);
+
 	
 	@Override
 	public void id() {
@@ -27,7 +31,13 @@ public class PessoaJuridica extends Cliente implements Tipo {
 		try {
 		System.out.print("Digite o Nome: ");
 		sc.nextLine();
-		nome = sc.nextLine();}
+		String input = sc.nextLine();
+        if (!input.isEmpty()) {
+            nome = Optional.of(input);
+        } else {
+            System.out.println("Nome está vazio.");
+        }
+		}
 		catch(InputMismatchException e) {
 			
 			System.err.println("Não é permitido inserir números inteiros!");
@@ -39,7 +49,12 @@ public class PessoaJuridica extends Cliente implements Tipo {
 	public void tipo() {
 		try {
 		System.out.print("Digite o CNPJ do usuario: ");
-		cnpj = sc.nextLine();	}
+		String input = sc.nextLine();
+        if (!input.isEmpty()) {
+            cnpj = Optional.of(input);
+        } else {
+            System.out.println("CPF está vazio.");
+        }	}
 		catch(InputMismatchException e) {
 			
 			System.err.println("Não é permitido números inteiros!");
@@ -62,7 +77,13 @@ public class PessoaJuridica extends Cliente implements Tipo {
 		try {
 		System.out.print("Digite o email do usuario: ");
 		sc.nextLine();
-		email = sc.nextLine();}
+		String input = sc.nextLine();
+        if (!input.isEmpty()) {
+            email = Optional.of(input);
+        } else {
+            System.out.println("Email está vazio.");
+        }
+		}
 		catch(InputMismatchException e) {
 			
 			System.err.println("Não é permitido inserir números inteiros!");
@@ -87,10 +108,10 @@ public class PessoaJuridica extends Cliente implements Tipo {
 	public void visualizar() {
 		 System.out.println("---------------------------------------------------");
 		 System.out.println("Id: " + id);
-		 System.out.println("Nome: " + nome);
-		 System.out.println("CNPJ: " + cnpj);
+		 nome.ifPresent(n -> System.out.println("Nome: " + n));
+	     cnpj.ifPresent(c -> System.out.println("CPF: " + c));
 		 System.out.println("Idade: " + idade);
-		 System.out.println("Email: " + email);
+		 email.ifPresent(e -> System.out.println("Email: " + e));
 		 System.out.println("Telefone: " + telefone);
 		 System.out.println("---------------------------------------------------");
 		 
